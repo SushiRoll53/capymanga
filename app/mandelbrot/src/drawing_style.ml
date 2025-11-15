@@ -16,7 +16,7 @@ type action =
 let component (local_ graph) =
   let all = Array.of_list all in
   let current, inject =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:0
       ~apply_action:(fun _ x action ->
         let offset = match action with Prev -> -1 | Next -> 1 in

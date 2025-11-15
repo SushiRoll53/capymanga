@@ -88,7 +88,7 @@ module Private = struct
   let register app (local_ graph) =
     let open Bonsai.Let_syntax in
     let handlers, inject =
-      Bonsai.state_machine0
+      Bonsai.state_machine
         ~default_model:String.Map.empty
         ~apply_action
         graph

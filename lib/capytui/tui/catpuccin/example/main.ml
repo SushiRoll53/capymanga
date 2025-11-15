@@ -16,7 +16,7 @@ let all_flavors = Core.Array.of_list Catpuccin.Flavor.all
 
 let app (local_ graph) =
   let index, cycle =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:0
       ~apply_action:(fun _ mode -> function
         | `Left -> (mode - 1) % Array.length all_flavors

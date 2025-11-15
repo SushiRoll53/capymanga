@@ -24,7 +24,7 @@ let component
   (local_ graph)
   =
   let string, inject =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:""
       ~apply_action:(fun _ (model : string) (action : action) ->
         match action with

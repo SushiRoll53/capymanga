@@ -15,7 +15,7 @@ let variable : (bool * (action -> unit Effect.t)) Bonsai.Dynamic_scope.t =
 
 let register inside (local_ graph) =
   let count, inject =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:0
       ~apply_action:(fun _ model -> function
         | Activate -> model + 1 | Deactivate -> model - 1)

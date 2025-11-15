@@ -82,7 +82,7 @@ let top_bar (local_ graph) =
 ;;
 
 let counter_state_machine (local_ graph) =
-  Bonsai.state_machine0
+  Bonsai.state_machine
     ~default_model:(Core.Int.Map.singleton 0 0)
     ~apply_action:(fun _ map -> function
       | `New -> Core.Map.set map ~key:(Core.Map.length map) ~data:0
@@ -94,7 +94,7 @@ let counter_state_machine (local_ graph) =
 ;;
 
 let focus_state_machine counters (local_ graph) =
-  Bonsai.state_machine1
+  Bonsai.state_machine_with_input
     ~default_model:0
     ~apply_action:(fun _ counters model action ->
       let result =

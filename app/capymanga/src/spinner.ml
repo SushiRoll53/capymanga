@@ -29,7 +29,7 @@ end
 let component ~kind message (local_ graph) =
   let%tydi { frames; tick_every } = Config.get kind in
   let current_frame, tick =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:0
       ~apply_action:(fun _ curr () -> (curr + 1) % Array.length frames)
       graph
@@ -41,7 +41,7 @@ let component ~kind message (local_ graph) =
     in
     Bonsai.Clock.every
       ~when_to_start_next_effect:`Every_multiple_of_period_non_blocking
-      tick_every
+      (Bonsai.return tick_every)
       tick
       graph
   in

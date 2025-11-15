@@ -22,7 +22,7 @@ type 'a action =
 
 let component default_page (local_ graph) =
   let state, inject =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:{ current = default_page; history = [] }
       ~apply_action:(fun _ model action ->
         match action with

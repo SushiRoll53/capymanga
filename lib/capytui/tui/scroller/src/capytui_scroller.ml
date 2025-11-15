@@ -129,7 +129,7 @@ let component ~dimensions node (local_ graph) =
       { content_height; dimensions; time_source }
     in
     Tuple2.uncurry Bonsai.both
-    @@ Bonsai.state_machine1
+    @@ Bonsai.state_machine_with_input
          ~default_model:{ offset = 0; last_time_g_was_pressed = None }
          ~apply_action
          input

@@ -56,7 +56,7 @@ module View_port = struct
 
   let component (local_ graph) =
     Tuple2.uncurry Bonsai.both
-    @@ Bonsai.state_machine0 ~default_model:default ~apply_action graph
+    @@ Bonsai.state_machine ~default_model:default ~apply_action graph
   ;;
 end
 

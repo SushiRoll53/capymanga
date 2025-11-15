@@ -52,7 +52,7 @@ let render_event : Event.t -> Node.t =
 
 let events_app (local_ graph) =
   let events, add_event =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:[]
       ~apply_action:(fun _ events event -> event :: List.take events 30)
       graph

@@ -271,7 +271,7 @@ let component
          ~on:manga_id
          ~for_:(fun (local_ graph) ->
            Tuple2.uncurry Bonsai.both
-           @@ Bonsai.state_machine1
+           @@ Bonsai.state_machine_with_input
                 ~default_model:{ Action.focus = 0; last_top_press = None }
                 ~apply_action:Action.apply_action
                 input

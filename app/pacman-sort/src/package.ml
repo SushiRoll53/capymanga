@@ -1,4 +1,4 @@
-open! Core
+(* open! Core
 
 type t =
   { name : string
@@ -178,4 +178,4 @@ let parser : t Angstrom.t =
     fun f -> Option.value_exn (Option_map.find parsed f)
   in
   Typed_field.create { f }
-;;
+;; *)

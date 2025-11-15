@@ -80,7 +80,7 @@ let image_viewer
       let%arr images and go_back in
       { images; go_back }
     in
-    Bonsai.state_machine1
+    Bonsai.state_machine_with_input
       ~default_model:0
       ~apply_action:(fun context input model action ->
         match input with
@@ -156,7 +156,7 @@ let component ~dimensions ~chapter ~go_back (local_ graph) =
     chapter.Chapter.id
   in
   let is_full_screen, toggle_fullscreen =
-    Bonsai.state_machine0
+    Bonsai.state_machine
       ~default_model:false
       ~apply_action:(fun _ current () -> not current)
       graph

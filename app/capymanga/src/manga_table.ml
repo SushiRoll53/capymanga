@@ -240,7 +240,7 @@ let table
          (module String)
          ~on:manga_title
          ~for_:(fun (local_ graph) ->
-           Bonsai.state_machine1
+           Bonsai.state_machine_with_input
              ~default_model:{ Action.focus = 0; last_top_press = None }
              ~apply_action:Action.apply_action
              input
